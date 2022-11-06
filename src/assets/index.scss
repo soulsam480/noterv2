@@ -1,0 +1,136 @@
+:root {
+  --n-bg-primary: #18181b;
+  --n-bg-secondary: #27272a;
+  --n-bg-tertiary: #3f3f46;
+  --n-text-primary: #fafafa;
+  --n-text-secondary: #a1a1aa;
+}
+
+body,
+html {
+  @apply bg-zinc-900;
+}
+
+.ce-block {
+  .cdx-marker,
+  .cdx-block.ce-paragraph,
+  .cdx-list__item,
+  .cdx-checklist__item-text,
+  .cdx-input {
+    color: var(--n-text-primary);
+  }
+
+  h1.ce-header {
+    @apply text-3xl;
+  }
+
+  h2.ce-header {
+    @apply text-2xl;
+  }
+
+  h3.ce-header {
+    @apply text-xl;
+  }
+
+  h4.ce-header {
+    @apply text-lg;
+  }
+
+  h5.ce-header {
+    @apply text-base;
+  }
+
+  h6.ce-header {
+    @apply text-sm;
+  }
+
+  .ce-header {
+    @apply font-semibold;
+  }
+
+  .ce-header::selection,
+  .ce-paragraph::selection,
+  .cdx-list__item::selection,
+  .cdx-checklist__item-text::selection,
+  .cdx-input::selection,
+  .tc-cell::selection,
+  .tc-row::selection {
+    color: var(--n-bg-primary);
+  }
+
+  &--selected .ce-block__content,
+  .cdx-input {
+    background-color: var(--n-bg-secondary);
+  }
+
+  .cdx-input[data-placeholder]:before {
+    @apply \!text-zinc-400;
+  }
+
+  .tc-wrap {
+    --color-background: var(--n-bg-secondary);
+    --color-text-secondary: var(--n-bg-primary);
+    --color-border: var(--n-bg-tertiary);
+  }
+
+  .tc-table {
+    .tc-cell,
+    .tc-row {
+      color: var(--n-text-primary);
+    }
+  }
+
+  .tc-add-row,
+  .tc-add-column {
+    svg {
+      fill: var(--n-text-primary);
+    }
+  }
+}
+
+.ce-toolbar {
+  @media (min-width: 650px) {
+    &__plus {
+      &:hover {
+        .icon--plus {
+          @apply \!fill-zinc-900;
+        }
+      }
+
+      .icon--plus {
+        fill: var(--n-text-primary);
+      }
+    }
+
+    &__settings-btn {
+      &:hover {
+        .icon--dots {
+          @apply \!fill-zinc-900;
+        }
+      }
+
+      .icon--dots {
+        fill: var(--n-text-primary);
+      }
+    }
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--n-text-secondary);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--n-bg-secondary);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: var(--n-bg-primary);
+}
